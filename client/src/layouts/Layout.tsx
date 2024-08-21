@@ -5,7 +5,7 @@ export default function Layout() {
     <>
         <header className="bg-slate-800">
             <div className="mx-auto max-w-5xl py-10 px-2 lg:px-0">
-                <h1 className="text-4xl font-extrabold text-white">
+                <h1 className="text-3xl font-extrabold text-white uppercase">
                     Products Administrator
                 </h1>
             </div>
