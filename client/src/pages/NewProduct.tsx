@@ -1,11 +1,26 @@
-import { Link, Form } from "react-router-dom";
+import { Link, Form, useActionData } from "react-router-dom";
 
-export async function action() {
-  console.log('from action...')
+export async function action({ request }) {
+  const data = Object.fromEntries(await request.formData()) 
+  
+  let error = ''
+  if(Object.values(data).includes('')){
+    error = 'All fields are required'
+  }
+
+  if(error.length) {
+    return error
+  }
+
   return {}
 }
 
 export default function NewProduct() {
+
+  const error = useActionData()
+
+  console.log(error)
+
   return (
     <>
       <div className="flex justify-between items-center">
@@ -30,7 +45,7 @@ export default function NewProduct() {
             <input 
                 id="name"
                 type="text"
-                className="mt-2 block w-full p-3 bg-gray-50"
+                className="mt-2 block w-full p-3 bg-gray-100"
                 placeholder="Product Name"
                 name="name"
             />
@@ -43,14 +58,14 @@ export default function NewProduct() {
             <input 
                 id="price"
                 type="number"
-                className="mt-2 block w-full p-3 bg-gray-50"
+                className="mt-2 block w-full p-3 bg-gray-100"
                 placeholder="Product Price. Example: 199, 599"
                 name="price"
             />
         </div>
         <input
           type="submit"
-          className="mt-5 w-full bg-indigo-600 p-2 text-white font-bold text-lg cursor-pointer rounded"
+          className="mt-5 w-full uppercase bg-indigo-600 p-2 text-white font-bold cursor-pointer rounded"
           value="Register"
         />
       </Form>
