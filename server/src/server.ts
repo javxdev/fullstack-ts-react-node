@@ -2,6 +2,7 @@ import express from 'express'
 import router from './router'
 import db from './config/db'
 import colors from 'colors'
+import cors from 'cors'
 import swaggerUi from "swagger-ui-express";
 import swaggerSpec, { swaggerUiOptions } from './config/swagger'
 
@@ -20,6 +21,7 @@ connectDB()
 
 // Express Instance
 const server = express()
+
 
 // Reading data from forms
 server.use(express.json())
