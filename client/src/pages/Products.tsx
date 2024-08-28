@@ -25,7 +25,7 @@ export default function Products() {
         </Link>
       </div>
 
-      <div className="p-2">
+      <div>
         <table className="w-full mt-5 table-auto">
           <thead className="bg-slate-800 text-white">
               <tr>
