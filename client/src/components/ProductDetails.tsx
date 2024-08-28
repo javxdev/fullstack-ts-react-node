@@ -21,8 +21,10 @@ export default function ProductDetails({product} : ProductDetailsPros) {
             <td className="p-3 text-lg text-gray-800">
                 {isAvailable ? 'Available' : 'Not Available'}
             </td>
-            <td className="p-3 text-lg text-gray-800 ">
-                <p>btn</p>
+            <td className="p-3 text-lg text-gray-800">
+                <div className="flex gap-3 items-center">
+                    <button>Edit</button>
+                </div>
             </td>
         </tr> 
     )
