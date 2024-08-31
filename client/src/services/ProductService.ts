@@ -1,5 +1,5 @@
 import { safeParse } from "valibot";
-import { DraftProductSchema, ProductsSchema } from "../types"
+import { DraftProductSchema, ProductsSchema, Product } from "../types"
 import axios from "axios";
 
 type ProductData = {
@@ -39,4 +39,8 @@ export async function getProducts() {
     } catch (error) {
         console.log(error)
     }
+}
+
+export async function getProductById(id : Product['id'])  {
+    console.log('FROM getProductById', id)
 }
