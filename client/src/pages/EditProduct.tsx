@@ -26,9 +26,11 @@ export async function action({ request, params } : ActionFunctionArgs) {
     return error
   }
 
-  await updateProduct(data)
-  
-  return redirect('/')
+  if(params.id !== undefined) {
+    await updateProduct(data, +params.id)
+    
+    return redirect('/')
+  }
 }
 
 export default function EditProduct() {
