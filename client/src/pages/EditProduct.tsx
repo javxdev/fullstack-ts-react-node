@@ -1,6 +1,7 @@
-import { Link, Form, useActionData, ActionFunctionArgs, redirect, LoaderFunctionArgs } from "react-router-dom";
+import { Link, Form, useActionData, ActionFunctionArgs, redirect, LoaderFunctionArgs, useLoaderData } from "react-router-dom";
 import ErrorMessage from "../components/ErrorMessage";
 import { addProduct, getProductById } from "../services/ProductService";
+import { Product } from "../types";
 
 export async function loader({params} : LoaderFunctionArgs) {
   if(params.id !== undefined) {
@@ -32,6 +33,7 @@ export async function action({ request } : ActionFunctionArgs) {
 
 export default function EditProduct() {
 
+  const product = useLoaderData() as Product
   const error = useActionData() as string
 
   return (
@@ -62,6 +64,7 @@ export default function EditProduct() {
                 className="mt-2 block w-full p-3 bg-gray-100"
                 placeholder="Product Name"
                 name="name"
+                value={product.name}
             />
         </div>
         <div className="mb-4">
@@ -75,6 +78,7 @@ export default function EditProduct() {
                 className="mt-2 block w-full p-3 bg-gray-100"
                 placeholder="Product Price. Example: 199, 599"
                 name="price"
+                value={product.price}
             />
         </div>
         <input
