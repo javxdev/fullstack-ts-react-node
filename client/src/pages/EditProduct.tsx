@@ -1,10 +1,12 @@
 import { Link, Form, useActionData, ActionFunctionArgs, redirect, LoaderFunctionArgs } from "react-router-dom";
 import ErrorMessage from "../components/ErrorMessage";
-import { addProduct } from "../services/ProductService";
+import { addProduct, getProductById } from "../services/ProductService";
 
 export async function loader({params} : LoaderFunctionArgs) {
-  console.log(params)
-  
+  if(params.id !== undefined) {
+    const product = await getProductById(+params.id)
+    console.log(product)
+  }
   return {}
 }
 
