@@ -19,7 +19,7 @@ export default function Products() {
         <h2 className="text-2xl font-black text-slate-600 uppercase">Products</h2>
         <Link
           to="products/new"
-          className="rounded-md p-3 bg-green-700 hover:bg-green-500 text-sm text-white shadow-sm"
+          className="rounded-md p-3 bg-green-800 hover:bg-green-600 text-sm text-white shadow-sm"
         >
           Add Product
         </Link>
