@@ -33,6 +33,11 @@ export async function action({ request, params } : ActionFunctionArgs) {
   }
 }
 
+const availabilityOptions = [
+  { name: 'Available', value: true},
+  { name: 'Not available', value: false}
+]
+
 export default function EditProduct() {
 
   const product = useLoaderData() as Product
