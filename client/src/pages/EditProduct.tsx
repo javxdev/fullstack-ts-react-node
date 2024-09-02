@@ -62,32 +62,51 @@ export default function EditProduct() {
       >
         <div className="mb-4">
             <label
-                className="text-gray-800"
-                htmlFor="name"
+              className="text-gray-800 font-bold"
+              htmlFor="name"
             >Name</label>
             <input 
-                id="name"
-                type="text"
-                className="mt-2 block w-full p-3 bg-gray-100"
-                placeholder="Product Name"
-                name="name"
-                value={product.name}
+              id="name"
+              type="text"
+              className="mt-2 block w-full p-3 bg-gray-200"
+              placeholder="Product Name"
+              name="name"
+              value={product.name}
             />
         </div>
+
         <div className="mb-4">
             <label
-                className="text-gray-800"
-                htmlFor="price"
+              className="text-gray-800 font-bold"
+              htmlFor="price"
             >Price</label>
             <input 
-                id="price"
-                type="number"
-                className="mt-2 block w-full p-3 bg-gray-100"
-                placeholder="Product Price. Example: 199, 599"
-                name="price"
-                value={product.price}
+              id="price"
+              type="number"
+              className="mt-2 block w-full p-3 bg-gray-200"
+              placeholder="Product Price. Example: 199, 599"
+              name="price"
+              value={product.price}
             />
         </div>
+
+        <div className="mb-4 ">
+            <label
+              className="text-gray-800 font-bold"
+              htmlFor="availability"
+            >Availability</label>
+            <select 
+              id="availability"
+              className="mt-2 block w-full p-3 bg-gray-200"
+              name="availability"
+              defaultValue={product?.availability.toString()}
+            >
+                {availabilityOptions.map(option => (
+                  <option key={option.name} value={option.value.toString()}>{option.name}</option>
+                ))}
+            </select>
+        </div>
+
         <input
           type="submit"
           className="mt-5 w-full uppercase bg-indigo-600 p-2 text-white font-bold cursor-pointer rounded"
