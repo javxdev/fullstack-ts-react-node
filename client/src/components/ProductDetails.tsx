@@ -27,7 +27,7 @@ export default function ProductDetails({product} : ProductDetailsPros) {
                 <div className="flex gap-3 items-center">
                     <button
                         onClick={() => navigate(`/products/${product.id}/edit`)}
-                        className="border-2  border-blue-700  hover:bg-blue-100 text-gray-800 rounded w-full p-2 uppercase font-bold text-xs text-center"
+                        className="border  border-blue-700 text-blue-700 rounded w-full p-2 font-bold text-xs text-center"
                     >Edit</button>
                 </div>
             </td>
