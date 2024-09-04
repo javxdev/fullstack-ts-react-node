@@ -71,7 +71,7 @@ export default function EditProduct() {
               className="mt-2 block w-full p-3 bg-gray-200"
               placeholder="Product Name"
               name="name"
-              value={product.name}
+              defaultValue={product?.name}
             />
         </div>
 
@@ -86,7 +86,7 @@ export default function EditProduct() {
               className="mt-2 block w-full p-3 bg-gray-200"
               placeholder="Product Price. Example: 199, 599"
               name="price"
-              value={product.price}
+              defaultValue={product?.price}
             />
         </div>
 
