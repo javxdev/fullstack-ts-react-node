@@ -1,7 +1,7 @@
 import { Product } from "../types"
 
 type ProductFormProps = {
-    product: Product
+    product?: Product
 }
 
 export default function ProductForm({ product } : ProductFormProps) {
