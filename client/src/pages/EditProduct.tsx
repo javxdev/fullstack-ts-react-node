@@ -2,6 +2,7 @@ import { Link, Form, useActionData, ActionFunctionArgs, redirect, LoaderFunction
 import ErrorMessage from "../components/ErrorMessage";
 import { getProductById, updateProduct } from "../services/ProductService";
 import { Product } from "../types";
+import ProductForm from "../components/ProductForm";
 
 export async function loader({params} : LoaderFunctionArgs) {
   if(params.id !== undefined) {
@@ -60,35 +61,9 @@ export default function EditProduct() {
         className="mt-10"
         method="POST"
       >
-        <div className="mb-4">
-            <label
-              className="text-gray-800 font-bold"
-              htmlFor="name"
-            >Name</label>
-            <input 
-              id="name"
-              type="text"
-              className="mt-2 block w-full p-3 bg-gray-200"
-              placeholder="Product Name"
-              name="name"
-              defaultValue={product?.name}
-            />
-        </div>
-
-        <div className="mb-4">
-            <label
-              className="text-gray-800 font-bold"
-              htmlFor="price"
-            >Price</label>
-            <input 
-              id="price"
-              type="number"
-              className="mt-2 block w-full p-3 bg-gray-200"
-              placeholder="Product Price. Example: 199, 599"
-              name="price"
-              defaultValue={product?.price}
-            />
-        </div>
+        <ProductForm
+            product={product}
+        />
 
         <div className="mb-4 ">
             <label

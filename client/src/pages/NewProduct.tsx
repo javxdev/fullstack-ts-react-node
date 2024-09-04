@@ -53,6 +53,7 @@ export default function NewProduct() {
                 name="name"
             />
         </div>
+        
         <div className="mb-4">
             <label
                 className="text-gray-800"
@@ -66,6 +67,7 @@ export default function NewProduct() {
                 name="price"
             />
         </div>
+
         <input
           type="submit"
           className="mt-5 w-full uppercase bg-indigo-600 p-2 text-white font-bold cursor-pointer rounded"
