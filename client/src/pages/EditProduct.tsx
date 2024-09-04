@@ -85,7 +85,7 @@ export default function EditProduct() {
         <input
           type="submit"
           className="mt-5 w-full uppercase bg-indigo-600 p-2 text-white font-bold cursor-pointer rounded"
-          value="Register"
+          value="Save Changes"
         />
       </Form>
     </>
