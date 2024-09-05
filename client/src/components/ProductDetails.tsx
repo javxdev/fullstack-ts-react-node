@@ -1,4 +1,4 @@
-import { useNavigate, Form, ActionFunctionArgs } from "react-router-dom"
+import { useNavigate, Form, ActionFunctionArgs, redirect } from "react-router-dom"
 import { Product } from "../types"
 import { formatCurrency } from "../utils"
 
@@ -6,9 +6,9 @@ type ProductDetailsPros = {
     product: Product
 }
 
-export async function action({ request } : ActionFunctionArgs) {
-    console.log('FROM ACTION OF PRODUCTDETAILS')
-    return null
+export async function action({ params } : ActionFunctionArgs) {
+    console.log(params.id)
+    return redirect('/')
 }
   
 
