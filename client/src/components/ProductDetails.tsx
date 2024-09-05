@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Form } from "react-router-dom"
 import { Product } from "../types"
 import { formatCurrency } from "../utils"
 
@@ -29,6 +29,16 @@ export default function ProductDetails({product} : ProductDetailsPros) {
                         onClick={() => navigate(`/products/${product.id}/edit`)}
                         className="border  border-blue-700 text-blue-700 rounded w-full p-2 font-bold text-xs text-center"
                     >Edit</button>
+
+                    <Form
+                        className="w-full"
+                    >
+                        <input
+                            type="submit"
+                            value="Delete"
+                            className="border  border-red-700 text-red-700 rounded w-full p-2 font-bold text-xs text-center cursor-pointer"
+                        />
+                    </Form>
                 </div>
             </td>
         </tr> 
