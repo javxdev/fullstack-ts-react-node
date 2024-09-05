@@ -1,10 +1,16 @@
-import { useNavigate, Form } from "react-router-dom"
+import { useNavigate, Form, ActionFunctionArgs } from "react-router-dom"
 import { Product } from "../types"
 import { formatCurrency } from "../utils"
 
 type ProductDetailsPros = {
     product: Product
 }
+
+export async function action({ request } : ActionFunctionArgs) {
+    console.log('FROM ACTION OF PRODUCTDETAILS')
+    return null
+}
+  
 
 export default function ProductDetails({product} : ProductDetailsPros) {
 
@@ -32,6 +38,8 @@ export default function ProductDetails({product} : ProductDetailsPros) {
 
                     <Form
                         className="w-full"
+                        method="POST"
+                        action={`products/${product.id}/delete`}
                     >
                         <input
                             type="submit"
