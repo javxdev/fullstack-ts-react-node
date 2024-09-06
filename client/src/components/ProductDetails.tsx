@@ -43,6 +43,11 @@ export default function ProductDetails({product} : ProductDetailsPros) {
                         className="w-full"
                         method="POST"
                         action={`products/${product.id}/delete`}
+                        onSubmit={(e) => {
+                            if( !confirm('Delete?' )){
+                                e.preventDefault()
+                            }
+                        }}
                     >
                         <input
                             type="submit"
