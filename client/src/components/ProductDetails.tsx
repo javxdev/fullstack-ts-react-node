@@ -13,7 +13,6 @@ export async function action({ params } : ActionFunctionArgs) {
         return redirect('/')
     }
 }
-  
 
 export default function ProductDetails({product} : ProductDetailsPros) {
 
@@ -34,8 +33,8 @@ export default function ProductDetails({product} : ProductDetailsPros) {
                 <fetcher.Form method="POST">
                     <button
                         type="submit"
-                        name="availability"
-                        value={product.availability.toString()}
+                        name="id"
+                        value={product.id}
                         className={`${isAvailable ? 'text-black' : 'text-red-600'} border border-black hover:cursor-pointer rounded p-2 text-xs uppercase font-bold w-full`}
                     >
                         {isAvailable ? 'Available' : 'Not Available'}
