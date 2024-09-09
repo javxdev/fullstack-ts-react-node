@@ -29,13 +29,13 @@ export default function ProductDetails({product} : ProductDetailsPros) {
             <td className="p-3 text-lg text-gray-800">
                 {formatCurrency(product.price)}
             </td>
-            <td className="p-3 text-lg text-gray-800">
+            <td className="p-3 text-xs text-gray-800">
                 <fetcher.Form method="POST">
                     <button
                         type="submit"
                         name="id"
                         value={product.id}
-                        className={`${isAvailable ? 'text-black' : 'text-red-600'} border border-black hover:cursor-pointer rounded p-2 text-xs uppercase font-bold w-full`}
+                        className={`${isAvailable ? 'text-black' : 'text-red-600'} border border-black hover:cursor-pointer rounded p-2 text-xs font-bold w-full`}
                     >
                         {isAvailable ? 'Available' : 'Not Available'}
                     </button>
