@@ -13,8 +13,9 @@ export async function connectDB() {
     try {
         await db.authenticate()
         db.sync()
+        console.log( colors.blue.bold( 'DB Connected' ));
     } catch (error) {
-        console.log( colors.red( 'DB Connection Failed' ));
+        console.log( colors.red.bold( 'DB Connection Failed' ));
     }
 }
 
@@ -23,7 +24,6 @@ connectDB()
 // Express Instance
 const server = express()
 
-// CORS CONFIG
 const corsOptions : CorsOptions = {
     origin: function(origin, callback) {
         if(origin === process.env.FRONTEND_URL) {
